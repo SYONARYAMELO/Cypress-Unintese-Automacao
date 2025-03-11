@@ -1,0 +1,27 @@
+{
+  "name": "cypress-unintese-automacao",
+  "version": "1.0.0",
+  "description": "Este é um projeto pessoal que estou desenvolvendo para práticar automação de testes com cypress.\r Escolhi o site da minha faculdade 'UNINTESE' para realizar os testes de automação..",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "test:headless": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SYONARYAMELO/Cypress-Unintese-Automacao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SYONARYAMELO/Cypress-Unintese-Automacao/issues"
+  },
+  "homepage": "https://github.com/SYONARYAMELO/Cypress-Unintese-Automacao#readme",
+  "devDependencies": {
+    "@testing-library/cypress": "^10.0.3",
+    "cypress": "^14.1.0",
+    "dotenv": "^16.4.7",
+    "mochawesome": "^7.1.3"
+  }
+}
