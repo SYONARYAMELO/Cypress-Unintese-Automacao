@@ -9,9 +9,13 @@ describe('Teste de login-Faculdade UNINTESE', () =>{
         cy.get('input[name="password"]').type('07071986')
         cy.get('button').contains('Acessar').click()
 
+        cy.get('.navbar-brand').should('be.visible')
+
         //Assert-Valida a url que que esta atualmente
         cy.url().should('eq','https://aprendocom.unintese.com.br/my/')
-    })
+
+        cy.screenshot('login')
+    });
 
     it('Deve exibir mensagem para senha e usuário incorretos', () => {
         //Arrange - Preparar
@@ -28,5 +32,7 @@ describe('Teste de login-Faculdade UNINTESE', () =>{
         // Verifica se a URL continua na página de login (não redirecionou)
         cy.url().should('include', '/login')
 
-    })
-})
+        cy.screenshot('erro credenciais inválidas')
+
+    });
+});

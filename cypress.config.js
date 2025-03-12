@@ -1,19 +1,22 @@
 const { defineConfig } = require("cypress");
 
-require('dotenv').config();
-
-module.exports ={
-  env: {
-    username: process.env.CYPRESS_USERNAME,
-    password: process.env.CYPRESS_PASSWORD,
-  },
-};
-
 module.exports = defineConfig({
+
+  reporter:'mochawesome', // Define Mochawesome como gerador de relatório
+  reporterOptions: {
+    reportDir: 'cypress/reports/mochawesome-report', // Pasta onde os relatórios serão salvos
+    overwrite: true,
+    html: true,
+    json: true,
+    timestamp: 'mmddyyyy_HHMMss',
+    embeddedScreenshots: true, // ✅ Permite anexar screenshots no relatório
+    inlineAssets: true, // ✅ Inclui imagens diretamente no HTML para fácil visualização
+  },
+
   chromeWebSecurity:false,
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      // Implementação de eventos do Node aqui, se necessário
     },
-  },
+  }
 });
